@@ -13,12 +13,12 @@ def list_division(my_list_1, my_list_2, list_length):
     nlist = []
     for count in range(0, list_length):
         try:
-            result = (my_list_1[count] / my_list_2[count])
+            result = my_list_1[count] / my_list_2[count]
         except TypeError:
             print("wrong type")
             result = 0
         except ZeroDivisionError:
-            print("division by zero")
+            print("division by 0")
             result = 0
         except IndexError:
             print("out of range")
