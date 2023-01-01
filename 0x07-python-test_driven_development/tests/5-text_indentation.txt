@@ -1,0 +1,52 @@
+A test document for the 3-say_my_name
+======================================
+
+case 0: importing
+     >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+-----------------------------------------------------------------------
+case 1: Inputting a string
+     >>> text_indentation("Name")
+     Name
+     
+-----------------------------------------------------------------------
+case 2: Inputting an empty string
+     >>> text_indentation("")
+     
+
+-----------------------------------------------------------------------
+case 3: Inputting a fullstop('.')
+     .
+     <BLANKLINE>
+     
+
+-----------------------------------------------------------------------
+case 4: Inputting several delimeters together
+     >>> text_indentation(".?:")
+     .
+     <BLANKLINE>
+     ?
+     <BLANKLINE>
+     :
+     <BLANKLINE>
+     
+
+-----------------------------------------------------------------------
+case 5: Inputting newlines and strings
+     >>> text_indentation("Hellooo \n\n\n\n my name is Joshua")
+     Hellooo
+     <BLANKLINE>
+     <BLANKLINE>
+     <BLANKLINE>
+     my name is Joshua
+     
+
+-----------------------------------------------------------------------
+case 6: Inputting None
+     >>> text_indentation(None)
+     Traceback (most recent call last):
+     ...
+     TypeError: text must be a string
+
+-----------------------------------------------------------------------
+

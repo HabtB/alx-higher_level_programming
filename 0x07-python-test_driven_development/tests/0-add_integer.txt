@@ -1,0 +1,67 @@
+SA test document for the 0-add_integer
+======================================
+
+case 0: importing
+     >>> add_integer = __import__('0-add_integer').add_integer
+
+-----------------------------------------------------------------------
+case 1: Addition of two numbers
+     >>> add_integer(1, 2)
+     3
+
+-----------------------------------------------------------------------
+case 2: Addition of one negative and one positive numbers
+     >>> add_integer(100, -2)
+     98
+
+-----------------------------------------------------------------------
+case 3: Addition of one arguement with the default
+     >>> add_integer(2)
+     100
+
+-----------------------------------------------------------------------
+case 4: Addition of a float and an integer
+     >>> add_integer(100.3, -2)
+     98
+
+-----------------------------------------------------------------------
+case 5: Addition of an integer with a non float or integer
+     >>> add_integer(4, "School")
+     Traceback (most recent call last):
+     ...
+     TypeError: b must be an integer
+
+-----------------------------------------------------------------------
+case 6: Addition of a non float or integer with an integer
+     >>> add_integer("School", 4)
+     Traceback (most recent call last):
+     ...
+     TypeError: a must be an integer
+
+-----------------------------------------------------------------------
+case 7: No argument given
+     >>> add_integer()
+     Traceback (most recent call last):
+     ...
+     TypeError: add_integer() missing 1 required positional argument: 'a'
+
+-----------------------------------------------------------------------
+case 8: Overflow
+     >>> add_integer(10e1000**2, 1)
+     Traceback (most recent call last):
+     ...
+     OverflowError: cannot convert float infinity to integer
+
+-----------------------------------------------------------------------
+case 9:adding float(NaN)
+     >>> add_integer(float('nan'), 2)
+     Traceback (most recent call last):
+     ...
+     ValueError: cannot convert float NaN to integer
+
+-----------------------------------------------------------------------
+case 10:adding (None)
+     >>> add_integer(None)
+     Traceback (most recent call last):
+     ...
+     TypeError: a must be an integer

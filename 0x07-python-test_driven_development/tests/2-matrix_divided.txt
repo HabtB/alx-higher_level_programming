@@ -1,0 +1,83 @@
+A test document for the 2-matrix_divided
+======================================
+
+case 0: importing
+     >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+-----------------------------------------------------------------------
+case 1: Division of integer matrix by integers
+     >>> matrix = [[10, 8, 6], [4, 2, 0]]
+     >>> matrix_divided(matrix, 2)
+     [[5.0, 4.0, 3.0], [2.0, 1.0, 0.0]]
+
+-----------------------------------------------------------------------
+case 2: Division of a mixt integers and floats matrix by integers
+     >>> matrix = [[10, 8, 6], [10.8, 6, 4.8]]
+     >>> matrix_divided(matrix, 2)
+     [[5.0, 4.0, 3.0], [5.4, 3.0, 2.4]]
+
+-----------------------------------------------------------------------
+case 3: Division of matrix by float
+     >>> matrix = [[11, 8, 6.6], [4.4, 2.31, 0]]
+     >>> matrix_divided(matrix, 2.2)
+     [[5.0, 3.64, 3.0], [2.0, 1.05, 0.0]]
+
+-----------------------------------------------------------------------
+case 4: Division of a negative matrix by integers
+     >>> matrix = [[-11, -8, 6.6], [-4.4, 2.31, 0]]
+     >>> matrix_divided(matrix, 2.2)
+     [[-5.0, -3.64, 3.0], [-2.0, 1.05, 0.0]]
+
+-----------------------------------------------------------------------
+case 5: Division of a matrix by None
+     >>> matrix = [[11, 8, 6.6], [4.4, 2.31, 0]]
+     >>> matrix_divided(matrix, None)
+     Traceback (most recent call last):
+     ...
+     TypeError: div must be a number
+
+-----------------------------------------------------------------------
+case 6: Division of a matrix by zero
+     >>> matrix = [[11, 8, 6.6], [4.4, 2.31, 0]]
+     >>> matrix_divided(matrix, 0)
+     Traceback (most recent call last):
+     ...
+     ZeroDivisionError: division by zero
+
+-----------------------------------------------------------------------
+case 7: Division of a None matrix by None
+     >>> matrix_divided(None, 2)
+     Traceback (most recent call last):
+     ...
+     TypeError: matrix must be a matrix (list of lists) of integers/floats
+     
+-----------------------------------------------------------------------
+case 8: Division of a non-number matrix 
+     >>> matrix = [["Selam", "Endet", "Neh"], [4.4, 2.31, 0]]
+     >>> matrix_divided(matrix, None)
+     Traceback (most recent call last):
+     ...
+     TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+-----------------------------------------------------------------------
+case 9: Dvision of an even matrix by a number
+     >>> matrix = [[11, 8, 6.6], [4.4, 2.31, 0, 5]]
+     >>> matrix_divided(matrix, 1)
+     Traceback (most recent call last):
+     ...
+     TypeError: Each row of the matrix must have the same size
+
+-----------------------------------------------------------------------
+case 10: Division of a an empty matrix
+     >>> matrix = []
+     >>> matrix_divided(matrix, 1)
+     []
+     >>> matrix
+     []
+
+-----------------------------------------------------------------------
+case 11: A no argument matrix
+     >>> matrix_divided()
+     Traceback (most recent call last):
+     ...
+     TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'

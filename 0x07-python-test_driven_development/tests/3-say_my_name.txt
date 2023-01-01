@@ -1,0 +1,43 @@
+A test document for the 3-say_my_name
+======================================
+
+case 0: importing
+     >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+-----------------------------------------------------------------------
+case 1: Inputting two strings
+     >>> say_my_name("Mihret", "Mandefro")
+     My name is Mihret Mandefro
+
+-----------------------------------------------------------------------
+case 2: Inputting one string as a first name
+     >>> say_my_name("Mihret", ["List", 5])
+     Traceback (most recent call last):
+     ...
+     TypeError: last_name must be a string
+
+-----------------------------------------------------------------------
+case 3: Inputting one string as a last name
+     >>> say_my_name(23, "Mihret")
+     Traceback (most recent call last):
+     ...
+     TypeError: first_name must be a string
+
+-----------------------------------------------------------------------
+case 4: Inputting non string arguments
+     >>> say_my_name(5, ["List", 5])
+     Traceback (most recent call last):
+     ...
+     TypeError: first_name must be a string
+
+-----------------------------------------------------------------------
+case 5: Inputting only last_name and emptry first name
+     >>> say_my_name("", "Mehari")
+     My name is  Mehari
+
+-----------------------------------------------------------------------
+case 6: Inputting missing arguments
+     >>> say_my_name()
+     Traceback (most recent call last):
+     ...
+     TypeError: say_my_name() missing 1 required positional argument: 'first_name'

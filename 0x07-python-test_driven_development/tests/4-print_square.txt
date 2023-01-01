@@ -1,0 +1,48 @@
+A test document for the 3-say_my_name
+======================================
+
+case 0: importing
+     >>> print_square = __import__('4-print_square').print_square
+
+-----------------------------------------------------------------------
+case 1: Printing a square
+     >>> print_square(3)
+     ###
+     ###
+     ###
+
+-----------------------------------------------------------------------
+case 2: Inputting a non-integer size
+     >>> print_square("selam")
+     Traceback (most recent call last):
+     ...
+     TypeError: size must be an integer
+
+-----------------------------------------------------------------------
+case 3: Inputting a negative size
+     >>> print_square(-3)
+     Traceback (most recent call last):
+     ...
+     ValueError: size must be >= 0
+
+-----------------------------------------------------------------------
+case 4: Inputting a float size
+     >>> print_square(5.0)
+     Traceback (most recent call last):
+     ...
+     TypeError: size must be an integer
+
+-----------------------------------------------------------------------
+case 5: Inputting zero as size
+     >>> print_square(0)
+     
+
+-----------------------------------------------------------------------
+case 4: Inputting no argument
+     >>> print_square()
+     Traceback (most recent call last):
+     ...
+     TypeError: print_square() missing 1 required positional argument: 'size'
+
+-----------------------------------------------------------------------
+
