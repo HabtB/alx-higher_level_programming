@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""this class demonstrates a locked class"""
 
 
 class LockedClass:
