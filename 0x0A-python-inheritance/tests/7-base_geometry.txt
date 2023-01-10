@@ -1,0 +1,86 @@
+Test for 7-base_geometry.py
+========================
+
+case 1: import
+>>> BaseG = __import__('7-base_geometry').BaseGeometry
+
+
+-------------------------------------------
+case 2: Validating integer
+
+>>> b = BaseG()
+>>> b.integer_validator("integer", 32)
+
+>>> b.integer_validator("integer", 0)
+Traceback (most recent call last):
+...
+ValueError: integer must be greater than 0
+
+--------------------------------------------
+case 3: validating a negative integer
+
+>>> b.integer_validator("integer", -5)
+Traceback (most recent call last):
+...
+ValueError: integer must be greater than 0
+
+
+---------------------------------------------
+case 4: checking for no arugument
+
+>>> b.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+---------------------------------------------
+case 5: checking for only one arugument
+
+>>> b.integer_validator("integer")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+
+---------------------------------------------
+case 6: checking for two string arugument
+
+>>> b.integer_validator("name", "John")
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
+
+---------------------------------------------
+case 7: checking for more than one arguments
+
+>>> b.integer_validator("integer", 1, 2)
+Traceback (most recent call last):
+...
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+---------------------------------------------
+case 8: checking for a tuple
+
+>>> b.integer_validator("integer", (1, 2))
+Traceback (most recent call last):
+...
+TypeError: integer must be an integer
+
+---------------------------------------------
+case 9: checking for area
+
+>>> b.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+---------------------------------------------
+case 10: checking for area
+
+>>> b.area(10)
+Traceback (most recent call last):
+...
+TypeError: area() takes 1 positional argument but 2 were given
+
+
