@@ -1,13 +1,10 @@
 #!/usr/bin/python3
-""" Contains a function 'add_attribute' """
+"""this module defines a function that adds attributes to objects"""
 
 
-def add_attribute(obj, attribute, value):
-    """ This method adds a new attribute to an object """
-
-    if '__dict__' not in dir(obj):
-        raise TypeError("can't add a new attribute")
-    if '__slots__' in dir(obj):
+def add_attribute(obj, att, value):
+    """Add a new attribute to an object if possible
+    """
+    if not hasattr(obj, "__dict__"):
         raise TypeError("can't add new attribute")
-    if '__setattr__' in dir(obj):
-        setattr(obj, attribute, value)
+    setattr(obj, att, value)

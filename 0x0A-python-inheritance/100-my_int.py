@@ -1,17 +1,14 @@
 #!/usr/bin/python3
-""" A module that contains "MyInt" class """
+"""this module defines a class MyInt that inherits from int"""
 
 
-def MyInt(int):
-    """ Defines MyInt class reversing '==' and '!=' """
+class MyInt(int):
+    """Invert int operators == and !="""
 
-    def __new__(cls, value):
-        return new.__new__(cls, int)        
+    def __eq__(self, value):
+        """Override == opeartor with != behavior"""
+        return self.real != value
 
-    def __eq__(self, other):
-        """ inverts the equal method """
-        return int(str(self)) != other
-
-    def __ne__(self, other):
-        """ inverts the not-equal method """
-        return int(str(self)) == other
+    def __ne__(self, value):
+        """Override != operator with == behavior"""
+        return self.real == value
