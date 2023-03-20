@@ -16,7 +16,7 @@ if __name__ == '__main__':
         host="localhost", user=argv[1], port=3306, passwd=argv[2], db=argv[3])
 
     db_cursor = db.cursor()
-    query = "SELECT * FROM states WHERE name LIKE 'N%'"
+    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC"
 
     db_cursor.execute(query)
 
