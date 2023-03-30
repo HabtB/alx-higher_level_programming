@@ -1,8 +1,3 @@
-#!/usr/bin/env bash
-url=$1
-
-response=$(curl -sI $url)
-size=$(echo "$response" | awk '/Content-Length/ {print $2}')
-if [[ -n "$size" ]]; then
-    echo "$size"
-fi
+#!/bin/bash
+# prints out the Content_Length of the a given url
+curl -sI "$1" | grep -i Content-Length | awk '{print $2}'
