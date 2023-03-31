@@ -1,3 +1,3 @@
-#!/bin/bashi
-# Takes URL as an arg, sends a GET request with a header variable X-School-User-Id
-curl -s "$1" -X GET -H "X-School-User-Id: 98"
+#!/bin/bash
+# send a GET request to the URL using curl, and display the body of the response
+curl -sH "X-School-User-Id: 98" "$1"
