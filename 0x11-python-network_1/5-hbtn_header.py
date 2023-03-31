@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" Script takes in URL, sends a request, and displays the value of a variable"""
+""" Script takes in URL, sends a request, and displays the 
+value of a variable.
+"""
 import requests
 import sys
 
