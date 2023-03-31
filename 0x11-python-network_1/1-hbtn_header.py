@@ -9,6 +9,5 @@ url = sys.argv[1]
 
 req = request.Request(url)
 with request.urlopen(req) as response:
-    headers = response.info()
-    x_request_id = headers.get('X-Request-Id')
+    x_request_id = dict(response.headers).get('X-Request-Id')
     print(f"{x_request_id}")
