@@ -8,9 +8,9 @@ import requests
 
 if __name__ == "__main__":
     uname = sys.argv[1]
-    psswd = sys.argv[2]
-
+    token = sys.argv[2]
+    headers = {'Authorization': 'token {}'.format(token)}
     url = f'https://api.github.com/users/{uname}'
-    body = requests.get(url, auth=(uname, psswd))
+    body = requests.get(url, headers=headers)
     if body.status_code == 200:
-        print(body.json().get('id'))
+        print((body.json()).get('id'))
